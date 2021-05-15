@@ -117,6 +117,24 @@ class hlPortfolio extends Timber\Site {
 }
 new hlPortfolio();
 
+	/**
+	 * Load Google Fonts from CDN.
+	 */
+	function wpdd_google_fonts() {
+		$google_fonts_url = 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap';
+		?>
+		
+		<link rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+	
+		<link rel="preload"
+			as="style"
+			href="<?php echo $google_fonts_url; ?>" />
+	<?php 
+	}
+		add_action( 'wp_head', 'wpdd_google_fonts', 3 );
+
 	/*
 	* style theme
 	*/

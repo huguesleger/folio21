@@ -16,7 +16,7 @@ module.exports = (env, argv) => {
     output: {
       filename: 'js/[name].[chunkhash].js',
       chunkFilename: '[name].[chunkhash].js',
-      publicPath: '/wp-content/themes/hltwentyv3/dist/',
+      publicPath: '/wp-content/themes/folio21/dist/',
     },
     resolve: {
       extensions: ['*', '.js'],

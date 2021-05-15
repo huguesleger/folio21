@@ -1,0 +1,18 @@
+// Fonts
+// ==================
+@font-face {
+    font-family: 'ButlerStencil-Black';
+    src: url('../../src/fonts/ButlerStencil-Black.woff') format('woff'),
+         url('../../src/fonts/ButlerStencil-Black.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'ButlerStencil-Medium';
+    src: url('../../src/fonts/ButlerStencil-Medium.woff') format('woff'),
+         url('../../src/fonts/ButlerStencil-Medium.woff2') format('woff2');
+}
+
+$font_butler_black: 'ButlerStencil-Black';
+$font_butler_medium: 'ButlerStencil-Medium';
+
+$font_poppins: 'Poppins', sans-serif;
