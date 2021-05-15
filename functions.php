@@ -7,7 +7,7 @@ if ( file_exists( $composer_autoload ) ) {
 }
 
 // Timber::$dirname = array( 'templates', 'views' );
-Timber::$dirname = ['src/templates'];
+Timber::$dirname = ['dist/templates'];
 
 Timber::$autoescape = false;
 
@@ -97,7 +97,7 @@ class hlPortfolio extends Timber\Site {
 
 		add_theme_support( 'menus' );
 
-				/*
+		/*
 		* logo custum
 		*/
 		add_theme_support('custom-logo',array(
@@ -116,3 +116,40 @@ class hlPortfolio extends Timber\Site {
 	}
 }
 new hlPortfolio();
+
+	/*
+	* style theme
+	*/
+	function hl_portfolio_style()  { 
+		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . hl_portfolio_get_hash( 'main.css' ) );
+	}
+	add_action( 'wp_enqueue_scripts', 'hl_portfolio_style' );
+
+
+	/*
+	* scripts theme
+	*/
+	function hl_portfolio_scripts()  {
+		wp_enqueue_script('vendors', get_template_directory_uri() . hl_portfolio_get_hash('vendors.js'), array(), '', true);
+		wp_enqueue_script('app', get_template_directory_uri() . hl_portfolio_get_hash('app.js'), array(), '', true);
+	}
+	add_action( 'wp_footer', 'hl_portfolio_scripts' );
+
+
+	/*
+	* hash webpack 
+	*/
+	function hl_portfolio_get_hash( $file ) {
+
+		$map = get_template_directory() . '/dist/manifest.json';
+		static $hash = null;
+
+		if ( null === $hash ) {
+			$hash = file_exists( $map ) ? json_decode( file_get_contents( $map ), true ) : [];
+		}
+
+		if ( array_key_exists( $file, $hash ) ) {
+			return '/dist/' . $hash[ $file ];
+		}
+		return $file;
+	}

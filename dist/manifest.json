@@ -1,0 +1,17 @@
+{
+  "app.js": "js/app.1dee349b5b607aac5e9e.js",
+  "app.js.map": "js/app.1dee349b5b607aac5e9e.js.map",
+  "main.css": "css/main.2f192c325f2d29005d28.css",
+  "main.css.map": "css/main.2f192c325f2d29005d28.css.map",
+  "main.js": "js/main.2f192c325f2d29005d28.js",
+  "main.js.map": "js/main.2f192c325f2d29005d28.js.map",
+  "templates/base.twig": "templates/base.twig",
+  "templates/front-page.twig": "templates/front-page.twig",
+  "templates/index.twig": "templates/index.twig",
+  "templates/layout/footer.twig": "templates/layout/footer.twig",
+  "templates/layout/html-header.twig": "templates/layout/html-header.twig",
+  "twig.js": "js/twig.d17c2eee79d03d33f21c.js",
+  "twig.js.map": "js/twig.d17c2eee79d03d33f21c.js.map",
+  "vendors.js": "js/vendors.c531d6804b737651d427.js",
+  "vendors.js.map": "js/vendors.c531d6804b737651d427.js.map"
+}
