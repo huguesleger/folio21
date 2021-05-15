@@ -153,3 +153,9 @@ new hlPortfolio();
 		}
 		return $file;
 	}
+
+
+	/**
+	 * clean wordpress
+	 */
+	require get_template_directory() . '/cleaner.php';
