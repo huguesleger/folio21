@@ -116,7 +116,6 @@ class hlPortfolio extends Timber\Site {
 	}
 }
 new hlPortfolio();
-
 	/**
 	 * Load Google Fonts from CDN.
 	 */
@@ -131,6 +130,9 @@ new hlPortfolio();
 		<link rel="preload"
 			as="style"
 			href="<?php echo $google_fonts_url; ?>" />
+
+		<link rel="stylesheet"
+		href="<?php echo $google_fonts_url; ?>" />	
 	<?php 
 	}
 		add_action( 'wp_head', 'wpdd_google_fonts', 3 );
