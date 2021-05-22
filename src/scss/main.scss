@@ -2,8 +2,17 @@
 // ==================
 @import 'utilities/variables';
 
+// Vendors
+// ==================
+@import 'vendors/splitting';
+@import 'vendors/splitting-cells';
 
 // Base
 // ==================
 @import 'base/reset';
 @import 'base/base';
+
+// Components
+// ==================
+@import 'components/intro';
+@import 'components/loader-intro';

@@ -6,6 +6,10 @@
 
 <body class="{{body_class}}">
     <div id="app">
+        {% block intro %}
+            {% include 'home/intro.twig' %}
+        {% endblock %}
+        
 		{% block content %}
         {% endblock %}
 	</div>
