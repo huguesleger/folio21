@@ -7,6 +7,7 @@
     width: 100%;
     height: 100vh;
     background-color: $grey_dark;
+    z-index: 10;
     .intro-content {
         position: relative;
         display: flex;
@@ -27,7 +28,7 @@
             }
             .job {
                 overflow: hidden;
-                .title {
+                .title h1{
                     font-family: $font_butler_medium;
                     font-size: 5rem;
                 }

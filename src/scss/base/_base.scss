@@ -1,5 +1,5 @@
 body {
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -9,4 +9,26 @@ body {
 h1 {
     font-family: $font_butler_medium;
     font-size: 3rem;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 3rem 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    #logo {
+        width: 35px;
+        height: auto;
+    }
+}
+
+#app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }

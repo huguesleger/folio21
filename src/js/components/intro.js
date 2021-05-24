@@ -5,8 +5,8 @@ import {cursorEnter} from './cursorIntro';
 Splitting();
 
 export const intro = function() {  
-    const charsName = document.querySelectorAll('.wrap-content.content-name .word > .char, .whitespace');
-    const charsJob = document.querySelectorAll('.wrap-content.content-job .word > .char, .whitespace');
+    const charsName = document.querySelectorAll('.wrap-content.content-name .word > .char, .wrap-content.content-name .whitespace');
+    const charsJob = document.querySelectorAll('.wrap-content.content-job .word > .char, .wrap-content.content-job .whitespace');
     const cursor = document.querySelector('.cursor');
     const intro = document.querySelector('.intro');
     const wrapContent = document.querySelectorAll('.wrap-content');
