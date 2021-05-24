@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import Splitting from "splitting";
 import {cursorEnter} from './cursorIntro';
+import {customCursor} from './cursor';
 
 Splitting();
 
@@ -88,7 +89,8 @@ export const intro = function() {
                             opacity: 0,
                             duration: 0.9,
                             onComplete: function() {
-                                intro.remove();                         
+                                intro.remove();
+                                this.cursorCustom = new customCursor;                         
                             }
                         })
                     }

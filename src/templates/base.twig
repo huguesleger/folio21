@@ -5,18 +5,24 @@
 {% endblock %}
 
 <body class="{{body_class}}">
+	<div class="custom-cursor">
+		<div class="cursor-content">
+			<div class="cursor-circle"></div>
+			<div class="cursor-label"></div>
+		</div>
+	</div>
+    {% block intro %}
+        {% include 'home/intro.twig' %}
+    {% endblock %}
+    {% block header %}
+        <header class="header">
+            <a class="logo" href="{{site.url}}"><img src="{{custom_logo_url}}"/></a>
+            <nav id="nav-main" class="nav-main">
+                {% include "layout/menu.twig" with {'items': menu.get_items} %}
+            </nav>
+        </header>        
+    {% endblock %}
     <div id="app">
-        {% block intro %}
-            {% include 'home/intro.twig' %}
-        {% endblock %}
-        {% block header %}
-            <header class="header">
-                <a class="logo" href="{{site.url}}"><img src="{{custom_logo_url}}"/></a>
-                <nav id="nav-main" class="nav-main">
-                    {% include "layout/menu.twig" with {'items': menu.get_items} %}
-                </nav>
-            </header>        
-        {% endblock %}
 		{% block content %}
         {% endblock %}
 	</div>
