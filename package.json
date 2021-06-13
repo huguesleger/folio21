@@ -49,8 +49,10 @@
     "math-fit": "^1.0.1"
   },
   "dependencies": {
+    "draggabilly": "^2.3.0",
     "gsap": "^3.6.1",
     "jquery": "^3.6.0",
+    "locomotive-scroll": "^4.1.1",
     "pixi.js": "^6.0.4",
     "splitting": "^1.0.6"
   }

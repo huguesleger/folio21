@@ -6,11 +6,16 @@
 // ==================
 @import 'vendors/splitting';
 @import 'vendors/splitting-cells';
+@import 'vendors/locomotive-scroll';
 
 // Base
 // ==================
 @import 'base/reset';
 @import 'base/base';
+
+// layout
+// ==================
+@import 'layout/grid';
 
 // Components
 // ==================
@@ -22,3 +27,8 @@
 // Pages
 // ==================
 @import 'pages/home';
+
+// Parts
+// ==================
+@import 'pages/parts/parts';
+@import 'pages/parts/webdesign';

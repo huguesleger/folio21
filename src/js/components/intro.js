@@ -110,9 +110,9 @@ export const intro = function() {
         loaderCursor.addEventListener('mousedown', function(e){
             if(e.buttons == 1) {
                 tl.play();
-                cursorTxt.innerHTML = "Press";
-            } else {
                 cursorTxt.innerHTML = "Enter";
+            } else {
+                cursorTxt.innerHTML = "Press";
                 return false;
             }
         });
@@ -120,7 +120,7 @@ export const intro = function() {
         loaderCursor.addEventListener('mouseup', animStop);
     
         function animStop() {
-            cursorTxt.innerHTML = "Enter";
+            cursorTxt.innerHTML = "Press";
             tl.pause();
           } 
     }

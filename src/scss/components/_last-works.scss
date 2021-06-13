@@ -32,6 +32,7 @@
             left: 50%;
             transform: translate(-50%, -50%) rotate(90deg);
             width: 100%;
+            color: $grey_dark;
             .title {
                 font-size: 2.5rem;
                 font-weight: 700;
@@ -69,8 +70,8 @@
                 font-family: $font_butler_black;
                 line-height: 1.2;
                 display: inline-block;
-                color: #fff;
-                -webkit-text-stroke-color: #ffff;
+                color: $grey_ultralight;
+                -webkit-text-stroke-color: $grey_ultralight;
                 -webkit-text-stroke-width: 1px;
                 font-weight: normal;
                 cursor: pointer;

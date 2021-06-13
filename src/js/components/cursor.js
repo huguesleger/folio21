@@ -6,6 +6,8 @@ export class customCursor {
         this.cursor = document.querySelector('.custom-cursor');
         this.label = label;
         this.label = document.querySelector('.cursor-label');
+        this.icon = document.querySelector('.cursor-icon');
+        this.cursorDrag = document.querySelector('.cursor-drag');
 
         this.events();
     }
@@ -16,7 +18,8 @@ export class customCursor {
         const el = document.querySelectorAll([
             "button",
             "a",
-            "[data-label-cursor]"
+            "[data-cursor-label]",
+            "[data-cursor-drag]"
         ]);
 
         for (var i = 0; i < el.length; i++) {
@@ -47,6 +50,22 @@ export class customCursor {
             this.cursor.classList.add('has-label');
             this.label.innerHTML = e.target.getAttribute('data-cursor-label');
         }
+        // if (e.target.getAttribute('data-cursor-drag')) {
+        //     this.cursor.classList.add('has-icon');
+        //     this.img = document.createElement('img');
+        //     this.img.src = img;
+        //     this.icon.appendChild(this.img)
+        // }
+        if (e.target.hasAttribute('data-cursor-drag')) {
+            this.cursor.classList.add('has-drag');
+            this.arrowLeft = document.createElement('div');
+            this.arrowLeft.classList.add('arrow-left');
+            this.arrowRight = document.createElement('div');
+            this.arrowRight.classList.add('arrow-right');
+            this.cursorDrag.appendChild(this.arrowLeft);
+            this.cursorDrag.appendChild(this.arrowRight);
+
+        }
     }
 
     onMouseLeave(e) {
@@ -55,6 +74,15 @@ export class customCursor {
         if (e.target.getAttribute('data-cursor-label')) {
             this.cursor.classList.remove('has-label');
             this.label.innerHTML = "";
+        }
+        if (e.target.hasAttribute('data-cursor-drag')) {
+            this.cursor.classList.remove('has-drag');
+            this.arrowLeft = document.querySelector('.arrow-left');
+            this.arrowRight = document.querySelector('.arrow-right');
+            this.cursorDrag.removeChild(this.arrowLeft);
+            this.cursorDrag.removeChild(this.arrowRight);
+            // this.img.src = img;
+            // this.icon.removeChild(this.img)
         }        
     }
 }

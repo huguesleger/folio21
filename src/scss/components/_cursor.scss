@@ -16,9 +16,10 @@
             position: absolute;
             width: 1.5rem;
             height: 1.5rem;
-            background-color: #ffffff;
+            background-color: $grey_ultralight;
+            border: 1px solid transparent;
             border-radius: 50%;
-            transition: 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out;
         }
         .cursor-label {
             position: absolute;
@@ -26,10 +27,58 @@
             left: 50%;
             width: 120px;
             transform: translate(-50%, -50%);
-            color: #ffffff;
+            color: $grey_ultralight;
             font-size: 1rem;
             text-align: center;
             z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .cursor-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            img {
+                width: 50px;
+                display: block;
+            }
+        }
+        .cursor-drag {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            transition-delay: 0.2s;
+            .arrow-right {
+                width: 0;
+                height: 0;
+                position: absolute;
+                z-index: 1;
+                border-width: 6px;
+                border-style: solid;
+                border-color: transparent;
+                border-left-color: $grey_dark;
+                right: -40px;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: right 0.2s ease-in-out;
+            }
+            .arrow-left {
+                width: 0;
+                height: 0;
+                position: absolute;
+                z-index: 1;
+                border-width: 6px;
+                border-style: solid;
+                border-color: transparent;
+                border-right-color: $grey_dark;
+                left: -40px;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: left 0.2s ease-in-out;
+            }
         }
     }
     &.active {
@@ -37,15 +86,40 @@
             transform: scale(3);
         }
     }
-    &.has-label {
+    &.has-label, &.has-drag {
         mix-blend-mode: initial;
         .cursor-circle {
-            background-color: #000000;
+            background-color: $grey_dark;
+        }
+        .cursor-label {
+            opacity: 1;
+        }
+        .cursor-icon {
+            opacity: 1;
+        }
+        .cursor-drag {
+            opacity: 1;
         }
     }
     &.active.has-label {
         .cursor-circle {
             transform: scale(6);
         }
+    }
+    &.active.has-drag {
+        .cursor-circle {
+            transform: scale(2);
+            border-color: $grey_dark;
+            background-color: transparent;
+        }
     } 
+}
+
+.is-draggy .custom-cursor .cursor-content .cursor-drag {
+    .arrow-left {
+        left: -45px;
+    }
+    .arrow-right {
+        right: -45px;
+    }
 }

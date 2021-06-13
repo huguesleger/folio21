@@ -2,8 +2,9 @@ import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin.js"
 import * as PIXI from 'pixi.js';
 import fit from "math-fit";
-import {loadImages} from "./loadImages";
+import { loadImages}  from "../utils/loadImages";
 import Splitting from "splitting";
+import { showSection } from "./showSection";
 
 gsap.registerPlugin(TextPlugin);
 
@@ -298,7 +299,7 @@ export class sliderWork {
             if(this.currentIndex >= 0 && this.currentIndex < this.images.length - 1 ) {
               this.onMoveSliderUp(this.currentIndex + 1 );
             } else {
-            //   App.scrollToSection();
+                showSection();
             }
         } else {
             if(this.currentIndex > 0 && this.currentIndex < this.images.length) {
