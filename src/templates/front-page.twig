@@ -5,12 +5,18 @@
         <div class="last-works">
             {% include "home/last-works.twig" %}
         </div>
-        <div class="parts">
-            <div class="scroll-content" data-scroll-container>
-                <section class="part-webdesign" data-scroll-section data-scroll-section-id="webdesign">
+        <div class="parts" data-scroll-container>
+            <div class="scroll-content" data-scroll-section>
+                <section class="part-webdesign" data-scroll data-scroll-repeat data-scroll-offset="10,50%" data-scroll-target=".wrap-content">
                     {% include "home/sections/webdesign.twig" %}
                 </section>
-            </div>
+                <section class="part-all-works" data-scroll data-scroll-delay="0.5" data-scroll-offset="300" data-scroll-target=".wrap-picture">
+                    {% include "home/sections/all-works.twig" %}
+                </section>   
+            </div>         
         </div>
     </div>
+{% endblock %}
+{% block footer %}
+	    {{ function('wp_footer') }}
 {% endblock %}

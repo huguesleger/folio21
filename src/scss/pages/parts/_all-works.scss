@@ -1,0 +1,101 @@
+.part-all-works {
+    position: relative;
+    color: #fff;
+    &::before {
+        content:"";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: $grey_dark;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 1s cubic-bezier(0.64, 0.02, 0.01, 1);
+        z-index: -1;
+    }
+    .wrap-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        .inner-link {
+            .word-works {
+                display: block;
+                font-size: 12rem;
+                font-family: $font_saonara;
+                text-transform: uppercase;
+                transform: translateY(5rem);
+                opacity: 0;
+                transition: opacity 0.8s cubic-bezier(.4,0,.68,.06) .2s, transform 1s cubic-bezier(0.64, 0.02, 0.01, 1);
+                line-height: 1;
+                span {
+                    display: block;
+                }
+                .word-1 {
+                    margin-left: 1rem;
+                }
+                .word-2 {
+                    margin-left: 14rem;
+                }
+                .word-3 {
+                    margin-left: 6rem;
+                }
+
+            }
+            .link-works {
+                text-align: right;
+                transform: translateY(5rem);
+                opacity: 0;
+                transition: opacity 0.8s cubic-bezier(.4,0,.68,.06) .2s, transform 1s cubic-bezier(0.64, 0.02, 0.01, 1);
+                .link {
+                    display: inline-flex;
+                    svg {
+                        width: 50px;
+                    }
+                }
+            }
+            &.is-inview {
+                .word-works, .link-works {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+    &.is-inview {
+        &::before {
+            transform: scaleY(1);
+        }
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding-bottom: 2rem;
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #fff;
+            padding-top: 1rem;
+            transform: translateY(5rem);
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(.4,0,.68,.06) .2s, transform 1s cubic-bezier(0.64, 0.02, 0.01, 1);
+            transition-delay: 0.4s;
+            .footer-social {
+                display: flex;
+                li {
+                    margin-left: 1rem;
+                }
+            }
+        }
+        &.is-inview {
+            .footer-content {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}

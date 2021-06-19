@@ -104,7 +104,10 @@ export const intro = function() {
         }, {
             strokeDasharray: "189",
             stroke: colorProgress,
-            duration: 2
+            duration: 2,
+            onComplete: function() {
+                cursorTxt.remove();
+            }
         });
     
         loaderCursor.addEventListener('mousedown', function(e){

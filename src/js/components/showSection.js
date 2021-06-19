@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 
 export const showSection = function() {
     const sections = document.querySelector('.sections');
-    const sectionParts = document.querySelector('.parts');
+    const sectionParts = document.querySelector('.scroll-content');
     let anim = false;
     window.addEventListener('scroll', onMouseWheel);
     sectionParts.addEventListener('mousewheel', onMouseWheel, {passive: true});
@@ -20,7 +20,7 @@ export const showSection = function() {
     })
 
      function onMouseWheel(e) {
-        const wrapper = document.querySelector('.wrap-content');
+        const wrapper = document.querySelector('.scroll-content');
         const pos = wrapper.getBoundingClientRect();
         if(anim) {
             return false;
@@ -36,6 +36,5 @@ export const showSection = function() {
                 }
             })
         }
-
     }
 }

@@ -73,7 +73,7 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(ttf|otf|eot|woff|woff2|svg)$/,
+          test: /\.(ttf|otf|eot|woff|woff2)$/,
           use: {
               loader: 'file-loader',
               options: {

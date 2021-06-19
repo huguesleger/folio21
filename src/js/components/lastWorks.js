@@ -119,11 +119,11 @@ export class sliderWork {
     }
 
     onMoveSliderUp(newIndex) {
-        let title = document.querySelectorAll('.item-title .title');
-        const currentTitle = title[this.currentIndex];
-        const nextTitle = title[newIndex];
-        const currentChars = currentTitle.querySelectorAll('.item-title .title .word > .char, .item-title .title .whitespace');
-        const nextChars = nextTitle.querySelectorAll('.item-title .title .word > .char, .item-title .title .whitespace');
+        let itemTitle = document.querySelectorAll('.item-title');
+        const currentItemTitle = itemTitle[this.currentIndex];
+        const nextItemTitle = itemTitle[newIndex];
+        const currentChars =  currentItemTitle.querySelectorAll('.item-title .title .word > .char, .item-title .title .whitespace');
+        const nextChars = nextItemTitle.querySelectorAll('.item-title .title .word > .char, .item-title .title .whitespace');
         const paginationBar = document.querySelector('.work-pagination .bar-line');
         const paginationItem = document.querySelector('.work-pagination .pagination-number-first');
         const currentItem = '0'+[newIndex + 1];
@@ -138,8 +138,8 @@ export class sliderWork {
 
         const tl = gsap.timeline({
             onStart: () => {
-                nextTitle.classList.add('active');
-                currentTitle.classList.remove('active');
+                nextItemTitle.classList.add('active');
+                currentItemTitle.classList.remove('active');
             },
             onComplete: () => {
                 this.isAnimating = false;
@@ -164,7 +164,7 @@ export class sliderWork {
             y: 0,
             ease: 'Expo.easeInOut',
             duration: 1.5,
-        }, 0) 
+        }, 0)
         .to(currentChars, {
             yPercent: -100,
             ease: "Expo.easeInOut",
@@ -178,7 +178,7 @@ export class sliderWork {
             ease: "Expo.easeInOut",
             duration: tlSettings.charsDuration,
             stagger: tlSettings.staggerVal  
-        }, "-=0.5")
+        }, "-=0.5")      
         .to(paginationBar, {
             scaleY: (this.currentIndex + 2) / this.images.length,
             duration: 0.5,
@@ -192,11 +192,11 @@ export class sliderWork {
     }
 
     onMoveSliderDown(newIndex) {
-        let title = document.querySelectorAll('.item-title .title');
-        const currentTitle = title[this.currentIndex];
-        const prevTitle = title[newIndex];
-        const currentChars = currentTitle.querySelectorAll('.item-title .title .word > .char, .whitespace');
-        const prevChars = prevTitle.querySelectorAll('.item-title .title .word > .char, .whitespace');
+        let itemTitle = document.querySelectorAll('.item-title');
+        const currentItemTitle = itemTitle[this.currentIndex];
+        const prevItemTitle = itemTitle[newIndex];
+        const currentChars = currentItemTitle.querySelectorAll('.item-title .title .word > .char, .whitespace');
+        const prevChars = prevItemTitle.querySelectorAll('.item-title .title .word > .char, .whitespace');
         const paginationBar = document.querySelector('.work-pagination .bar-line');
         const paginationItem = document.querySelector('.work-pagination .pagination-number-first');
         const currentItem = '0'+[this.currentIndex];
@@ -210,8 +210,8 @@ export class sliderWork {
         this.isAnimating = true;
         const tl = gsap.timeline({
             onStart: () => {
-                prevTitle.classList.add('active');
-                currentTitle.classList.remove('active');
+                prevItemTitle.classList.add('active');
+                currentItemTitle.classList.remove('active');
             },
             onComplete: () => {
                 this.isAnimating = false;
@@ -250,7 +250,7 @@ export class sliderWork {
             ease: "Expo.easeInOut",
             duration: tlSettings.charsDuration,
             stagger: tlSettings.staggerVal  
-        }, "-=0.5")
+        }, "-=0.5")        
         .to(paginationBar, {
             scaleY: this.currentIndex / this.images.length,
             duration: 0.5,
@@ -290,6 +290,26 @@ export class sliderWork {
         })        
     }
 
+    mouseEnter() {
+        const tl = gsap.timeline();      
+        tl.to(this.displacementFilter.scale, {
+            x: 40,
+            y: 60,
+            ease: "Expo.easeInOut",
+            duration: 1
+        })
+    }
+
+    mouseLeave() {
+        const tl = gsap.timeline();      
+        tl.to(this.displacementFilter.scale, {
+            x: 20,
+            y: 10,
+            ease: "Expo.easeInOut",
+            duration: 1
+        })
+    }
+
     onMouseWheel(e) {
         if (this.isAnimating) {
             return false;
@@ -310,6 +330,12 @@ export class sliderWork {
 
     events() {
         const wrapper = document.querySelector('.last-works');
+        const itemTitle = document.querySelectorAll('.work-items .item-title');
+
+        itemTitle.forEach((e)=> {
+            e.addEventListener('mouseenter', this.mouseEnter.bind(this));
+            e.addEventListener('mouseleave', this.mouseLeave.bind(this));
+        });
 
         wrapper.addEventListener('mousewheel', this.onMouseWheel.bind(this), {passive: true});
     }

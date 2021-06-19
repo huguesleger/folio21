@@ -30,9 +30,17 @@
          url('../../src/fonts/Butler.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'Made-Saonara';
+    src: url('../../src/fonts/Made-Saonara.woff') format('woff'),
+         url('../../src/fonts/Made-Saonara.woff2') format('woff2');
+}
+
 $font_butler_black: 'Butler-Black';
 $font_butler_medium: 'Butler-Medium';
 $font_butler: 'Butler';
+
+$font_saonara: 'Made-Saonara';
 
 $font_poppins: 'Poppins', sans-serif;
 

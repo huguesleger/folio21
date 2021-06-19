@@ -65,8 +65,9 @@
             overflow: hidden;
             display: flex;
             justify-content: center;
+            pointer-events: none;
             .title {
-                font-size: 5rem;
+                font-size: 6rem;
                 font-family: $font_butler_black;
                 line-height: 1.2;
                 display: inline-block;
@@ -77,13 +78,12 @@
                 cursor: pointer;
                 z-index: 1;
                 transition: color .2s ease-in-out;
-                pointer-events: none;
-                &.active {
-                    pointer-events: initial;
-                }
                 &:hover {
                     color: transparent;
                 }
+            }
+            &.active {
+                pointer-events: initial;
             }
         }
     }
