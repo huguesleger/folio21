@@ -25,11 +25,76 @@ class hlPortfolio extends Timber\Site {
 		/** This is where you can register custom post types. */
 		public function register_post_types() {
 
+			function work() {
+				$labels = array(
+					'name'               => 'Projets',
+					'singular_name'      => 'Projet',
+					'menu_name'          => 'Projets',
+					'name_admin_bar'     => 'Projets',
+					'add_new'            => 'Ajouter un nouveau projet',
+					'add_new_item'       => 'Ajouter un projet',
+					'new_item'           => 'Nouveau projet',
+					'edit_item'          => 'Editer un projet',
+					'view_item'          => 'Voir un projet',
+					'all_items'          => 'Tous les projets',
+					'search_items'       => 'Rechercher un projet',
+					'parent_item_colon'  => 'Parent Item',
+					'not_found'          => 'Aucun projet',
+					'not_found_in_trash' => 'Aucun projet dans la corbeille'
+				);
+				$args = array(
+					'labels'             => $labels,
+					'description'        => __( 'Description.', 'your-plugin-textdomain' ),
+				  'public'             => true,
+					'publicly_queryable' => true,
+					'show_ui'            => true,
+					'show_in_menu'       => true,
+					'show_in_rest'       => true,
+					'query_var'          => true,
+				  	'rewrite'            => array( 'slug' => 'projet' ),
+					'capability_type'    => 'post',
+					'menu_icon'          => 'dashicons-images-alt2',
+					'has_archive'        => false,
+					'hierarchical'       => true,
+					'menu_position'      => 5,
+					'supports'           => array( 'title', 'editor', 'author', 'excerpt', 'thumbnail','revisions','page-attributes'),
+				);
+
+				register_post_type( 'work', $args );								
+			}
+			work();
 		}
 
         /** This is where you can register custom taxonomies. */
         public function register_taxonomies() {
 
+			function category() {
+				$labels = array(
+					'name'=>'Catégories',
+					'singular_name'=>'Catégorie',
+					'search_items'=>'Rechercher des catégories',
+					'all_items'=>'Toute les catégories',
+					'parent_item'=>'Catégorie parent',
+					'parent_item_colon'=>'Catégorie parent:',
+					'edit_item'=>'Editer une catégorie',
+					'update_item'=> 'Mettre à jour une catégorie',
+					'add_new_item'=>'Ajouter une nouvelle catégorie',
+					'new_item_name'=>'Nom de la nouvelle catégorie',
+					'menu_name'=>'Catégories'
+				);
+				$args = array(
+						'hierarchical'=> true,
+						'labels'=>$labels,
+						'show_ui'=> true,
+						'show_in_rest'=> true,
+						'show_admin_column'=>true,
+						'query_var'=> true,
+						'rewrite'=> array( 'slug' => 'category-type' )
+				);
+
+				register_taxonomy('category-type', array('work'), $args);				
+			}
+			category();
         }
 
 	/** This is where you add some context

@@ -1,44 +1,41 @@
+{# {{ dump(post) }}      #}
 <div class="col-work work-title">
     <div class="title-content">
-        <h2 class="title">Derniers Projets</h2>
-        <h3 class="subtitle">C'est tout frais, voici mes dernières réalisations.</h3>
+        <h2 class="title">{{post_work.work_title}}</h2>
+        <h3 class="subtitle">{{post_work.work_subtitle}}</h3>
     </div>
 </div>
 <div class="col-work work-slider">
+{% for post in posts %}
     <div class="slider-item">
-        <img class="thumb" src="../../images/img-1.jpg" alt="">
+        <img class="thumb" src="{{post.thumbnail.src}}" alt="">
     </div>
-    <div class="slider-item">
-        <img class="thumb" src="../../images/img-2.jpg" alt="">
-    </div>
-    <div class="slider-item">
-        <img class="thumb" src="../../images/img-3.jpg" alt="">
-    </div>
-    <div class="slider-item">
-        <img class="thumb" src="../../images/img-4.jpg" alt="">
-    </div>         
+{% endfor %}           
 </div>
 <div class="col-work work-items">
-    <div class="item-title active">
-       <a href="#" class="title" data-cursor-label="Voir le projet" data-splitting>Easy Music Project</a>
+{% for post in posts %}
+    <div class="item-title {% if loop.first %}active{% endif %}">
+       <a href="{{post.link}}" class="title" data-cursor-label="Voir le projet" data-splitting>{{post.title}}</a>
     </div>
-    <div class="item-title">
-        <a href="#" class="title" data-splitting>Viz 360</a>
-    </div>
-    <div class="item-title">
-        <a href="#" class="title" data-splitting>Download</a>
-    </div>
-    <div class="item-title">
-        <a href="#" class="title" data-splitting>Test 4</a>
-    </div>                   
+{% endfor %}                         
 </div>
 <div class="col-work"></div>
 <div class="col-work work-pagination">
     <div class="pagination">
-        <div class="pagination-number pagination-number-first">01</div>
+    {% for i, post in posts %}
+        {% set number = i + 1 %}
+        {% if loop.first %}
+            <div class="pagination-number pagination-number-first">0{{number}}</div>
+        {% endif %}    
+    {% endfor %}     
             <div class="pagination-bar">
                 <div class="bar-line"></div>
             </div>
-        <div class="pagination-number pagination-number-last">04</div>    
+    {% for i, post in posts %}
+        {% set number = i + 1 %}
+        {% if loop.last %}        
+            <div class="pagination-number pagination-number-last">0{{number}}</div> 
+        {% endif %}
+    {% endfor %}         
     </div>
 </div>

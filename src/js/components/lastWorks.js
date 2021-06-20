@@ -183,12 +183,12 @@ export class sliderWork {
             scaleY: (this.currentIndex + 2) / this.images.length,
             duration: 0.5,
             ease: "Expo.easeInOut"
-        }, "-=0.9")
+        }, 0)
         .to(paginationItem, {
             text: currentItemString,
             duration: 0.5,
             ease: "Expo.easeInOut"
-        }, "-=0.9")           
+        }, 0)           
     }
 
     onMoveSliderDown(newIndex) {
@@ -255,12 +255,12 @@ export class sliderWork {
             scaleY: this.currentIndex / this.images.length,
             duration: 0.5,
             ease: "Expo.easeInOut"
-        }, "-=0.9")
+        }, 0)
         .to(paginationItem, {
             text: currentItemString,
             duration: 0.5,
             ease: "Expo.easeInOut"
-        }, "-=0.9")                                     
+        }, 0)                                     
     }
 
     showItemWork() {
