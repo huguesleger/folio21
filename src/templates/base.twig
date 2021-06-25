@@ -27,10 +27,10 @@
             <div class="wrap-main">
                 <div class="wrap-left">
                     <div class="bg-img">
-                        <img class="item-img active" src="../images/img-1.jpg" data-img="img-1">
-                        <img class="item-img" src="../images/img-2.jpg" data-img="img-2">
-                        <img class="item-img" src="../images/img-3.jpg" data-img="img-3">
-                        <img class="item-img" src="../images/img-4.jpg" data-img="img-4">
+                    {% for i, item in menu.get_items %}
+                    {% set number = i + 1 %}
+                        <img class="item-img{% if loop.first %} active{% endif %}" src="{{ Image(item.meta('nav_thumb')).src }}" data-img="img-{{number}}">
+                    {% endfor %}
                     </div>        
                 </div>
                 <div class="wrap-right">

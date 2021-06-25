@@ -109,8 +109,8 @@ export class sliderWork {
         this.displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
         this.displacementFilter = new PIXI.filters.DisplacementFilter(this.displacementSprite);
   
-        this.displacementFilter.scale.x = 20;
-        this.displacementFilter.scale.y = 10;
+        this.displacementFilter.scale.x = 40;
+        this.displacementFilter.scale.y = 30;
         this.displacementFilter.autoFit = true;
   
         this.container.filters = [this.displacementFilter];
@@ -293,8 +293,8 @@ export class sliderWork {
     mouseEnter() {
         const tl = gsap.timeline();      
         tl.to(this.displacementFilter.scale, {
-            x: 40,
-            y: 60,
+            x: 20,
+            y: 10,
             ease: "Expo.easeInOut",
             duration: 1
         })
@@ -303,8 +303,8 @@ export class sliderWork {
     mouseLeave() {
         const tl = gsap.timeline();      
         tl.to(this.displacementFilter.scale, {
-            x: 20,
-            y: 10,
+            x: 40,
+            y: 30,
             ease: "Expo.easeInOut",
             duration: 1
         })
