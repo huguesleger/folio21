@@ -21,7 +21,7 @@
                     {% for i, item in post_webdesign.meta('webdesign_items') %}
                         <div class="draggy-item">
                             <div class="draggy-img-outer">
-                                <img class="draggy-img" src="{{item.webdesign_thumb}}">
+                                <img class="draggy-img" src="{{item.webdesign_thumb}}" alt="{{item.webdesign_alt}}">
                             </div>
                         </div>
                     {% endfor %}    

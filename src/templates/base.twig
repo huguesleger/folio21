@@ -19,10 +19,25 @@
     {% block header %}
         <header class="header">
             <a class="logo" href="{{site.url}}"><img src="{{custom_logo_url}}"/></a>
-            <nav id="nav-main" class="nav-main">
-                {% include "layout/menu.twig" with {'items': menu.get_items} %}
-            </nav>
-        </header>        
+            <button class="btn-main">
+                <span class="main-bar"></span>
+            </button>
+        </header>
+        <nav id="nav-main" class="main">
+            <div class="wrap-main">
+                <div class="wrap-left">
+                    <div class="bg-img">
+                        <img class="item-img active" src="../images/img-1.jpg" data-img="img-1">
+                        <img class="item-img" src="../images/img-2.jpg" data-img="img-2">
+                        <img class="item-img" src="../images/img-3.jpg" data-img="img-3">
+                        <img class="item-img" src="../images/img-4.jpg" data-img="img-4">
+                    </div>        
+                </div>
+                <div class="wrap-right">
+                    {% include "layout/menu.twig" with {'items': menu.get_items} %}  
+                </div>
+            </div>
+        </nav>        
     {% endblock %}
     <div id="app">
 		{% block content %}

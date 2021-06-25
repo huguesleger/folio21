@@ -7,6 +7,16 @@ body {
     height: 100vh;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    &:focus, &:focus-visible {
+        outline: none;
+    }
+}
+
 .header {
     position: fixed;
     left: 0;
@@ -16,9 +26,15 @@ body {
     display: flex;
     justify-content: space-between;
     z-index: 10;
+    mix-blend-mode: difference;
+    background: #fff; //fix render txt
+    background-clip: text; //fix render txt
+    -webkit-background-clip: text; //fix render txt
+    -webkit-text-fill-color: transparent; //fix render txt
     #logo {
         width: 35px;
         height: auto;
+        fill: #fff;
     }
 }
 

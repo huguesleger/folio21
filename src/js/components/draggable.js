@@ -3,9 +3,12 @@ import {MathUtils} from "../utils/math";
 const Draggabilly = require('draggabilly');
 
 let containerSize;
-const calcContainerSize = () => containerSize = {width: document.querySelector('.draggy-container').offsetWidth, height: document.querySelector('.draggy-container').offsetHeight};
-calcContainerSize();
-window.addEventListener('resize', calcContainerSize);
+const wrapper = document.querySelector('.wrap-picture');
+if (wrapper) {
+    const calcContainerSize = () => containerSize = {width: wrapper.offsetWidth, height: wrapper.offsetHeight};
+    calcContainerSize();
+    window.addEventListener('resize', calcContainerSize);
+}
 
 let cursor = document.querySelector('.custom-cursor');
 

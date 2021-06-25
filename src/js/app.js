@@ -2,6 +2,9 @@ import {intro} from './components/intro';
 import {sliderWork} from "./components/lastWorks";
 import LocomotiveScroll from 'locomotive-scroll';
 import {Draggy} from './components/draggable';
+// import {observerEl} from './components/observer';
+import {navImg} from './components/nav';
+import {navOpen} from './components/nav';
 
 window.App = {};
 
@@ -9,15 +12,25 @@ export const App = window.App;
 
 App.init = function() {
     intro();
+    navImg();
+    navOpen();
+
     const slideShow = document.querySelector('.work-slider');
-    this.scene = new sliderWork(slideShow);
+    if (slideShow) {
+        this.scene = new sliderWork(slideShow);
+    }
+
     const scroll = new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
         smooth: true,
     });
 
     const draggy = document.querySelector('.draggy-container');
-    this.dragEl = new Draggy(draggy);
+    if (draggy) {
+        this.dragEl = new Draggy(draggy);
+    }
+
+    // observerEl();
 
 }
 

@@ -55,17 +55,17 @@
                     }
                 }
             }
-            &.is-inview {
-                .word-works, .link-works {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
         }
     }
     &.is-inview {
         &::before {
             transform: scaleY(1);
+        }
+        .wrap-link .inner-link {
+            .word-works, .link-works {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     }
     .footer {

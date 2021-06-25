@@ -1,9 +1,15 @@
 {% if menu %}
-	<ul>
-	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "layout/menu.twig" with {'items': item.children} %}
+	<ul class="wrap-items">
+	{% for i, item in items %}
+	{% set number = i + 1 %}
+		<li class="main-item{% if item.current %} item-active{% endif %}" data-img="img-{{number}}">
+			<span class="number-inner">
+				<span class="item-number">0{{number}}</span>			
+			</span>
+			<a class="item" target="{{ item.target }}" href="{{ item.link }}">
+				<span class="item-link" data-splitting>{{ item.title }}</span>
+				<span class="item-hover" data-splitting>{{ item.title }}</span>
+			</a>
 		</li>
 	{% endfor %}
 	</ul>
