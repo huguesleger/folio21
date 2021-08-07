@@ -4,3 +4,4 @@ composer.lock
 node_modules
 dist
 report*
+package-lock.json
