@@ -1,25 +1,4 @@
 import { gsap } from "gsap";
-// import {customCursor} from '../components/cursor';
-
-// const blockTransition = () => {
-//   const block = document.querySelectorAll('.wrap-transition .transition-block');
-//   const tl = gsap.timeline();
-
-//   return new Promise(resolve => {
-//   // tl.set(block, {
-//   //   scaleX: 0,
-//   //   transformOrigin: 'center left',
-//   //   ease: "Power2.easeInOut",
-//   // })    
-//     tl.to(block, {
-//       scaleX: 1,
-//       transformOrigin: 'center left',
-//       duration: 0.4,
-//       ease: "Power2.easeInOut",
-//       onComplete: () => resolve(),
-//     })
-// })
-// }
 
 export const toProjectTransition = {
     name: 'to-project-transition',
