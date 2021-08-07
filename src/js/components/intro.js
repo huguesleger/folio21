@@ -119,8 +119,18 @@ export const intro = function() {
                 return false;
             }
         });
+        loaderCursor.addEventListener('touchstart', function(e){
+                tl.play();
+                cursorTxt.innerHTML = "Enter";
+        });
+
+        loaderCursor.addEventListener('touchleave', function(e){
+                cursorTxt.innerHTML = "Press";
+                return false;
+        });
         
         loaderCursor.addEventListener('mouseup', animStop);
+        loaderCursor.addEventListener('touchend', animStop);
     
         function animStop() {
             cursorTxt.innerHTML = "Press";

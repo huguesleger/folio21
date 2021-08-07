@@ -49,6 +49,8 @@
     "math-fit": "^1.0.1"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@barba/prefetch": "^2.1.10",
     "draggabilly": "^2.3.0",
     "gsap": "^3.6.1",
     "jquery": "^3.6.0",

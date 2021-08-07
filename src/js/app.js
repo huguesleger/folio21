@@ -5,6 +5,7 @@ import {Draggy} from './components/draggable';
 // import {observerEl} from './components/observer';
 import {navImg} from './components/nav';
 import {navOpen} from './components/nav';
+import {initRouting} from './route';
 
 window.App = {};
 
@@ -14,6 +15,7 @@ App.init = function() {
     intro();
     navImg();
     navOpen();
+    initRouting();
 
     const slideShow = document.querySelector('.work-slider');
     if (slideShow) {
@@ -24,6 +26,8 @@ App.init = function() {
         el: document.querySelector('[data-scroll-container]'),
         smooth: true,
     });
+    // window.addEventListener("refresh", () => locoScroll.update());
+
 
     const draggy = document.querySelector('.draggy-container');
     if (draggy) {

@@ -1,0 +1,21 @@
+.wrap-transition {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    .transition-block {
+        position: relative;
+        width: calc(100vw / 4);
+        overflow: hidden;
+        height: 100%;
+        background-color: $grey_dark;
+        transform: scaleX(0);
+        // transition: transform 0.4s ease-in-out;
+        transform-origin: center left;
+        z-index: 2;
+    }
+}

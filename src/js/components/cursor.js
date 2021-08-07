@@ -10,6 +10,7 @@ export class customCursor {
         this.cursorDrag = document.querySelector('.cursor-drag');
 
         this.events();
+        this.initCursor();
     }
 
     events() {
@@ -26,6 +27,14 @@ export class customCursor {
             el[i].addEventListener('mouseenter', this.onMouseEnter.bind(this));
             el[i].addEventListener('mouseleave', this.onMouseLeave.bind(this));
           }
+    }
+
+    initCursor() {
+        if(this.cursor.classList.contains('active') || this.cursor.classList.contains('has-label')) {
+            this.cursor.classList.remove('active');
+            this.cursor.classList.remove('has-label');
+            this.label.innerHTML = "";
+        }
     }
 
     onMouseMove(e) {

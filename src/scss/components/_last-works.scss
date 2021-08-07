@@ -10,6 +10,9 @@
         &:not(:last-child) {
             border-right: 1px solid $grey_ultralight;
         }
+        &.work-slider {
+            border-right: none;
+        }
         &.work-items {
             position: absolute;
             width: calc(100vw / 2);

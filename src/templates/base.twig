@@ -5,6 +5,7 @@
 {% endblock %}
 
 <body class="{{body_class}}">
+<div class="inner-site" data-barba="wrapper">
 	<div class="custom-cursor">
 		<div class="cursor-content">
 			<div class="cursor-circle"></div>
@@ -43,13 +44,14 @@
 		{% block content %}
         {% endblock %} 
 	</div>
-
+</div>
     {% block footer %}
         <footer>
             {% include 'layout/footer.twig' %}
         </footer>
 	    {{ function('wp_footer') }}
-    {% endblock %}      
+    {% endblock %}
+    <div class="page-transition-backdrop"></div>      
 </body>
 
 </html>
